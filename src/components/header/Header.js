@@ -16,7 +16,7 @@ const TagHeader = styled.header`
 `
 
 const Logo = styled.a`
-    color: var(--logo-color);
+    color: #5D5D6D;
     font-weight: 400;
     font-size: 40px;
     line-height: 150%;
