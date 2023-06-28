@@ -6,7 +6,9 @@ const Header = () => {
   return (
     <div className={styles.tagHeader}>
         <a className={styles.logo} href="/">Boutique da Daiani</a>
-        <SearchInput/>
+        <div>
+          <SearchInput/>
+        </div>
     </div>
   )
 }

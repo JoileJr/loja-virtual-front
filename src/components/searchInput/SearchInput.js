@@ -1,15 +1,43 @@
 import React from 'react'
-import styles from './SearchInput.module.css'
-import { RiSearchLine } from 'react-icons/ri';
+import { styled } from "styled-components";
+import SearchIcon from '../icons/SearchIcon';
 
-const SearchInput = () => {
+export const PrimaryInput = styled.input`
+    width: 352px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 16px;
+
+    background-color: #F3F5F6;
+
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: #737380;
+`
+
+const InputContainer = styled.div`
+    position: relative;
+    width: 352px;
+
+    svg {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+`
+
+const SearchInput = (props) => {
   return (
-    <div className={styles.div}>
-        <input placeholder='Procurando por algo especifico?' className={styles.input}/>
-        <div className={styles.icon}>
-            <RiSearchLine />
-        </div>
-    </div>
+    <InputContainer>
+        <PrimaryInput 
+            onChange={(event) => props.handleChange(event.target.value)} 
+            {...props}
+        />
+        <SearchIcon/>
+    </InputContainer>
   )
 }
 
