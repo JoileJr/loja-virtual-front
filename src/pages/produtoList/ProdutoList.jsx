@@ -26,9 +26,9 @@ const ProdutoList = () => {
             <h2>Lista de produtos</h2>
             <button onClick={formulario}>Novo produto</button>
             <br /><br />
-            {produtos.map(produto=>{
+            {produtos.map(produto=>
                 <p key={produto.id}>{produto.descricaoCurta}</p>
-            })}
+            )}
         </div>
     )
 }
