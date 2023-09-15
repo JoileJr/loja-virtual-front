@@ -1,0 +1,19 @@
+.form{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button{
+    margin-top: 20px;
+    width: 700px;
+}
+
+.input{
+    width: 700px;
+}
+
+.label{
+    margin-top: 20px;
+}

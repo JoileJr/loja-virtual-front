@@ -19,8 +19,8 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" Component={() => <Home />} />
-          <Route exact path="/productForm" Component={() => <ProdutoForm />} />
-          <Route exact path="/productList" Component={() => <ProdutoList />} />
+          <Route exact path="/produtos" Component={ProdutoList} />
+          <Route exact path="/produto-formulario" Component={ProdutoForm} />
         </Routes>
         <Footer />
       </BrowserRouter>
