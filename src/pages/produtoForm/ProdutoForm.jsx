@@ -1,20 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { ProdutoService } from '../../services/ProdutoService';
 import styles from './ProdutoForm.module.css';
+import { useLocation } from 'react-router-dom';
 
 const ProdutoForm = () => {
-    const produtoNovo = { descricaoCurta: '', descricaoDetalhada: '', valorCusto: 0, valorVenda:0};
+    const produtoNovo = { descricaoCurta: '', descricaoDetalhada: '', valorCusto: null, valorVenda: null};
     const [produto, setProduto] = useState(produtoNovo);
     const produtoService = new ProdutoService();
+    const location = useLocation();
+    const { produtoAlterar } = location.state || { };
+
+    useEffect(() => {
+        if(produtoAlterar){
+            setProduto(produtoAlterar);
+        } else {
+            setProduto(produtoNovo);
+        }
+    }, []);
 
     const alterarValor = (event) => {
         setProduto({...produto, [event.target.name]:event.target.value });
     }
 
     const salvar = () => {
-        produtoService.inserir(produto).then(data => {
-            console.log(data)
-        });
+        if(produto.id){
+            produtoService.alterar(produto).then(data => {
+                console.log(data);
+            })
+        } else {
+            produtoService.inserir(produto).then(data => {
+                console.log(data)
+            });
+        }
     }
 
     return (

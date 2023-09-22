@@ -7,6 +7,8 @@ import Footer from './components/footer/Footer';
 import Home from './pages/home/Home';
 import ProdutoForm from './pages/produtoForm/ProdutoForm';
 import ProdutoList from './pages/produtoList/ProdutoList';
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
 
 export const TemaContexto = createContext();
 

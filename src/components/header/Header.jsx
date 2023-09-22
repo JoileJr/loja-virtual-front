@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import styles from './Header.module.css';
 import { TemaContexto } from "../../App";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
     const {dark, setDark} = useContext(TemaContexto);
